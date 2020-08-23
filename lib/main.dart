@@ -27,23 +27,52 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: FlatButton(
-                onPressed: () {
-                  rollDice();
-                }, child: Image.asset('images/dice$leftDiceNumber.png')),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Center(
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: FlatButton(
+                    onPressed: () {
+                      rollDice();
+                    }, child: Image.asset('images/dice$leftDiceNumber.png')),
+              ),
+              Expanded(
+                child: FlatButton(
+                    onPressed: () {
+                      rollDice();
+                    }, child: Image.asset('images/dice$rightDiceNumber.png')),
+              ),
+
+
+            ],
           ),
-          Expanded(
-            child: FlatButton(
-                onPressed: () {
-                  rollDice();
-                }, child: Image.asset('images/dice$rightDiceNumber.png')),
+
+
+        ),
+        SizedBox(height: 50.0,),
+
+        Material(
+          child: MaterialButton(
+            child: Text('Roll!',
+            style: TextStyle(
+              fontFamily: 'Pacifico2',
+              fontSize: 20.0,
+
+            ),),
+
+            onPressed: () {
+              rollDice();
+            },
+
           ),
-        ],
-      ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
+          color: Colors.red[100],
+          elevation: 25.0,
+        )
+      ],
     );
   }
 
